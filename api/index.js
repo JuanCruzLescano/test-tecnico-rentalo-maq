@@ -9,13 +9,13 @@ const routes = require('./routes')
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json({extended: false}));
-app.use('/', routes)
 
 
 // Rutas
 app.get('/', (req, res) => {
   res.send('Test Tecnico Rentalo MAQ')
 });
+app.use('/', routes)
 
 
 
