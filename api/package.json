@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "mocha"
+    "test": "npm run test:model && npm run test:server",
+    "test:server": "mocha ./test/server.spec.js",
+    "test:model": "mocha ./test/models.spec.js"
   },
   "author": "",
   "license": "ISC",

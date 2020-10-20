@@ -1,16 +1,27 @@
-const { syncDbSeed } = require('../index')
-const { expect } = require('chai')
+const { conn, User } = require("../db");
+const { expect } = require("chai");
 
+describe("Model Tests", () => {
+   before(() => conn.sync({ force: true }));
+   
+  after(() => conn.sync({force: true}));
 
-describe('Model Tests', () => {
-  let seed;
-  beforeEach( async () => seed = syncDbSeed());
-  describe('User model', () => {
-    it('John, Maria and Jose have a first name', (done) => {
-      expect(seed.users.John.firstName).to.equal('John')
-      expect(seed.users.Maria.firstName).to.equal('Maria')
-      expect(seed.users.Jose.firstName).to.equal('Jose')
+  it("Create user", (done) => {
+    User.create({
+      firstName: "John",
+      lastName: "Doe",
+      email: "john@doe.com",
+    }).then((result) => {
+      expect(result.firstName).to.equal("John");
       done();
-    })
-  })
+    });
+  });
+
+  it("Get all users", (done) => {
+    User.findAll().then((result) => {
+      expect(result.length).to.equal(1);
+      done();
+    });
+  });
 })
+
