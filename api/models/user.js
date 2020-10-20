@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes) => {
         firstName : {
             type : DataTypes.STRING,
             allowNull : false,
+            unique: true
         },
         lastName : {
             type : DataTypes.STRING,
@@ -12,10 +13,10 @@ module.exports = (sequelize, DataTypes) => {
         email : {
             type: DataTypes.STRING,
             allowNull : false,
-            timestamps: false,
             validate: {
-              isEmail: true
-            }
+                isEmail: true
+            },
+            unique: true
         },
     });
     return User

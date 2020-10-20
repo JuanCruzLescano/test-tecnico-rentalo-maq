@@ -1,0 +1,41 @@
+.cardForm {
+  background-color: #e0e0e0;
+  width: 344px;
+  height: 382px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 8px;
+  -webkit-box-shadow: 7px 10px 18px -10px rgba(61,61,61,0.52);
+  -moz-box-shadow: 7px 10px 18px -10px rgba(61,61,61,0.52);
+  box-shadow: 7px 10px 18px -10px rgba(61,61,61,0.52);
+}
+
+.title {
+  font-family: Helvetica;
+  color: #212121;
+  margin-bottom: 10px; 
+}
+
+.userForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.userForm input {
+  margin: 8px;
+  padding: 8px;
+  border: none; 
+  border-radius: 8px;
+  width: 80%;
+}
+
+.userForm input:focus {
+  outline: none;
+  transition: .4s;
+  background-color: #eeeeee;
+}
